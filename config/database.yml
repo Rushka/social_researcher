@@ -1,0 +1,21 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 5
+development:
+  <<: *default
+  host: localhost
+  database: social_researcher_development
+  username: dev
+  password: password1
+test:
+  <<: *default
+  host: localhost
+  database: social_researcher_test
+  username: dev
+  password: password1
+production:
+  <<: *default
+  database: social_researcher
+  username: deployer
+  password: <%= ENV['SOCIAL_RESEARCHER_DATABASE_PASSWORD'] %>

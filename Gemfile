@@ -18,6 +18,7 @@ gem "breadcrumbs_on_rails"
 gem "d3-rails"
 gem 'vkontakte_api'
 gem 'jquery-validation-rails'
+gem 'd3_rails'
 
 group :development, :test do
   gem 'byebug'

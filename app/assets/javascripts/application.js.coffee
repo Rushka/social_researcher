@@ -17,4 +17,5 @@
 #= require jquery.validate
 #= require jquery.validate.additional-methods
 #= require jquery.validate.localization/messages_ru
+#= require d3
 #= require_tree .

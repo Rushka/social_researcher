@@ -8,9 +8,11 @@ class FriendsController < ApplicationController
   end
 
   def validate
-    render json: {ok: true, response: @vk.users.get(uids: params[:user]) } 
+    user_id = params[:user1] || params[:user2]
+    @vk.users.get(uids: user_id)
+    render json: true
   rescue => e
-    render json: {ok: false, response: e}  
+    render json: e
   end
 
   private

@@ -15,6 +15,9 @@ gem 'bootstrap-sass', '~>3.3.1'
 gem 'dotenv-rails'
 gem "font-awesome-rails"
 gem "breadcrumbs_on_rails"
+gem "d3-rails"
+gem 'vkontakte_api'
+gem 'jquery-validation-rails'
 
 group :development, :test do
   gem 'byebug'

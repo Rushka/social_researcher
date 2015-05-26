@@ -4,7 +4,9 @@ class FriendsController < ApplicationController
   end
 
   def build
-    render json: {ok: true, response: @vk.users.get(uids: 'rushess') }  
+    users = @vk.users.get(uids: ['rushess', 'traume'], fields: 'screen_name')
+    friends2 = @vk.friends.get(user_id: users.second.uid)
+    render json: {ok: true, response: @vk.friends.get(uids: 'rushess') }  
   end
 
   def validate
@@ -18,5 +20,11 @@ class FriendsController < ApplicationController
   private
   def vk_init
     @vk = VkontakteApi::Client.new
+  end
+
+  def check_friends(user_ids)
+    local_friends = @vk.friends.get(user_id: users.first.uid)
+    
+    
   end
 end

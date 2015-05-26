@@ -4,20 +4,17 @@ class FriendsController < ApplicationController
   end
 
   def build
-    vk = VkontakteApi::Client.new
-    render json: {ok: true, response: vk.users.get(uids: 'rushess') }   
-  rescue => e
-    render json: {ok: false, response: e}
+    render json: {ok: true, response: @vk.users.get(uids: 'rushess') }  
   end
 
   def validate
-    render json: {ok: true, response: vk.users.get(uids: 'rushess') }   
+    render json: {ok: true, response: @vk.users.get(uids: params[:user]) } 
   rescue => e
-    render json: {ok: false, response: e}
+    render json: {ok: false, response: e}  
   end
 
   private
   def vk_init
-    vk = VkontakteApi::Client.new
+    @vk = VkontakteApi::Client.new
   end
 end
